@@ -8,6 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/style.css">
 
 </head>
 
@@ -58,22 +59,21 @@
                     class="btn bg-green-100 font-poppins text-[#1DD100] text-lg hidden lg:flex hover:bg-transparent border-2 border-[#1DD100]">Bus
                     <span><img src="./images/bus-icon.png" alt=""></span></button>
             </div>
-
         </div>
         </div>
     </header>
     <main>
         <!-- ........banner section........ -->
-        <section class="container mx-auto my-16">
+        <section class="container mx-auto my-16 p-2">
             <div
                 class="relative lg:h-[70vh] rounded-3xl w-full bg-[linear-gradient(45deg,rgba(17,17,17,0.0),rgba(17,17,17,0.0)),url(./images/banner.png)] bg-center bg-cover flex text-center items-center justify-center">
                 <div class="text-white lg:space-y-10 ">
-                    <h1 class="font-eb text-3xl lg:text-7xl font-extrabold">End-to-End Travel With <br> <span
-                            class="text-[#1DD100]">CityHopper
+                    <h1 class="font-eb text-3xl font-raleway lg:text-7xl font-extrabold">End-to-End Travel With <br>
+                        <span class="text-[#1DD100]">CityHopper
                             Paribahan</span>
                     </h1>
 
-                    <p class="font-poppins text-xs lg:text-lg">SKY Travel Group (OTI Holding) continues to grow in the
+                    <p class="font-inter text-xs lg:text-lg">SKY Travel Group (OTI Holding) continues to grow in the
                         international tourism industry with the <br> industry's most reliable brands in the fields of
                         tour
                         operator, accommodation, destination services,<br> aviation, travel agency, information
@@ -81,13 +81,63 @@
                         and security.</p>
                     <div class="lg:flex items-center justify-center lg:space-x-5 border-none">
                         <button
-                            class="btn font-poppins lg:w-44 lg:h-16 bg-[#1DD100] text-white text-xl hover:bg-transparent border-2 border-[#1DD100]">Buy
+                            class="btn font-raleway lg:w-44 lg:h-16 bg-[#1DD100] text-white text-xl hover:bg-transparent border-2 border-[#1DD100]">Buy
                             Tickets</button>
                     </div>
                 </div>
+            </div>
+        </section>
 
+
+        <!-- Best offers section -->
+        <section class="container mx-auto my-16">
+            <div class="text-center">
+                <h3 class="font-raleway text-4xl font-bold">Best offers for you</h3>
+            </div>
+            <!-- offer-card -->
+            <div class="lg:flex gap-2 justify-between space-y-8 mt-10 p-2">
+                <!-- offer card-1 -->
+                <div class="bg-[#FFBF0F] lg:w-[700px] lg:h-[220px] flex rounded-3xl lg:mt-10">
+                    <div class="p-10 space-y-2">
+                        <h2 class="lg:text-4xl font-extrabold">15% OFF</h2>
+                        <p class="text-xl font-semibold">on your next purchase</p>
+                        <p class="text-lg">use by January 2024</p>
+                    </div>
+                    <div class="lg:ml-28">
+                        <img class="h-full" src="./images/cupon-devider.png" alt="">
+                    </div>
+                    <!-- coupon code -->
+                    <div class="p-10 space-y-2 mt-5">
+                        <h2 class="font-raleway lg:text-4xl font-extrabold">NEW15</h2>
+                        <p class="text-xl font-semibold">Coupon Code</p>
+                    </div>
+
+                </div>
+
+                <!-- offer card-2 -->
+                <div class="bg-[#F78C9C] lg:w-[700px] lg:h-[220px] flex rounded-3xl lg:mt-10">
+                    <div class="p-10 space-y-2">
+                        <h2 class="lg:text-4xl font-extrabold">20% OFF</h2>
+                        <p class="text-xl font-semibold">on your next purchase</p>
+                        <p class="text-lg">use by January 2024</p>
+                    </div>
+                    <div class="lg:ml-28">
+                        <img class="h-full" src="./images/cupon-devider.png" alt="">
+                    </div>
+                    <!-- coupon code -->
+                    <div class="p-10 space-y-2 mt-5">
+                        <h2 class="font-raleway lg:text-4xl font-extrabold">Couple 20</h2>
+                        <p class="text-xl font-semibold">Coupon Code</p>
+                    </div>
+
+                </div>
             </div>
 
+            <div class="lg:flex items-center justify-center ml-32 lg:ml-0 mt-14">
+                <button
+                    class="btn font-raleway lg:w-44 lg:h-16 bg-white text-[#1DD100]  text-xl hover:bg-transparent border-2 border-[#1DD100]">See
+                    All Offers</button>
+            </div>
 
         </section>
 
