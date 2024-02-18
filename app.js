@@ -1,8 +1,10 @@
 const allSeat = document.getElementsByClassName('seat');
+let count = 0;
 let totalPrice = 0;
 for (const seat of allSeat) {
     seat.addEventListener('click', function (e) {
 
+        count = count + 1;
 
         const seatNo = e.target.innerText;
 
@@ -20,12 +22,13 @@ for (const seat of allSeat) {
         li.appendChild(p1);
         li.appendChild(p2);
         li.appendChild(p3);
-        
+
 
         selectedSeatNo.appendChild(li);
 
         // calculated total price
         getTotalPrice("total-price", parseInt(price));
+        setInnerText('cart-count', count);
     });
 };
 
