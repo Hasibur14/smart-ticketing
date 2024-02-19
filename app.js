@@ -1,3 +1,8 @@
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+
 const allSeat = document.getElementsByClassName('seat');
 let totalSeat = 40;
 let count = 0;
@@ -103,3 +108,23 @@ applyBtn.addEventListener('click', function () {
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 };
+
+
+
+//button Modal
+const mobileInput = document.getElementById('mobileInput');
+const continueBtn = document.getElementById('continueBtn');
+
+continueBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (mobileInput.value.trim() !== '') {
+        const myModal = document.getElementById('myModal');
+        if (myModal !== null && typeof myModal.showModal === 'function') {
+            myModal.showModal();
+        }
+    }
+     else {
+        alert('Please enter your mobile number.');
+    }
+});

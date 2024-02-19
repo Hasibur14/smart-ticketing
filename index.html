@@ -79,7 +79,8 @@
                         operator, accommodation, destination services,<br> aviation, travel agency, information
                         technologies
                         and security.</p>
-                    <div class="lg:flex items-center justify-center lg:space-x-5 border-none">
+                    <div onclick="scrollToSection('seatSelectionSection')"
+                        class="lg:flex items-center justify-center lg:space-x-5 border-none">
                         <button
                             class="btn font-raleway lg:w-44 lg:h-16 bg-[#1DD100] text-white text-xl hover:bg-transparent border-2 border-[#1DD100]">Buy
                             Tickets</button>
@@ -209,7 +210,7 @@
 
 
             <!-- box-2 -->
-            <div class="container mx-auto my-10 lg:flex bg-white rounded-lg gap-20 p-4">
+            <div id="seatSelectionSection" class="container mx-auto my-10 lg:flex bg-white rounded-lg gap-20 p-4">
                 <!-- left part -->
                 <div class="lg:w-3/5">
                     <h3 class="text-3xl font font-bold ml-4 ">Select Your Seat</h3>
@@ -230,8 +231,8 @@
                     <hr>
 
                     <!-- seat -->
-                    <div class=" w-16 h-10 bg-gray-200 rounded-lg text-lg text-center items-center lg:ml-[740px] mt-4">
-                        <img class="p-1 ml-3" src="./images/steering.png" alt="">
+                    <div class=" w-16 h-10 bg-gray-200 rounded-lg text-lg text-center items-center lg:ml-[70px] mt-4">
+                        <img class="p-1 ml-2" src="./images/steering.png" alt="">
                     </div>
 
                     <div> <span class="hidden">550</span>
@@ -504,22 +505,19 @@
                             <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="text"
                                 placeholder="Enter your name">
                             <h4>Phone Number :</h4>
-                            <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="number"
-                                placeholder="Enter your phone number" required>
+                            <input id="mobileInput" class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="number"
+                                placeholder="Enter your phone number">
                             <h4>Email ID :</h4>
                             <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="email"
                                 placeholder="Enter your email id">
 
-                            <!-- Open the modal using ID.showModal() method -->
-                            <!-- <button class="btn w-full text-xl text-white bg-[#1DD100]"
-                                onclick="my_modal_5.showModal()">Next</button> -->
 
-                            <input class="btn lg:w-11/12 text-xl text-white mt-4 bg-[#1DD100]" type="submit"
-                                value="Next">
+                            <input id="continueBtn" class="btn lg:w-11/12 text-xl text-white mt-4 bg-[#1DD100]"
+                                type="submit" value="Next">
                         </form>
 
 
-                        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <dialog id="myModal" class="modal modal-bottom sm:modal-middle">
                             <div class="modal-box text-center items-center">
                                 <img class="lg:ml-44" src="./images/success.png" alt="">
                                 <h3 class="font-bold text-xl text-[#1DD100]">SUCCESS</h3>
