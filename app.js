@@ -43,6 +43,7 @@ for (const seat of allSeat) {
 
             setInnerText('seat-count', totalSeat);
             setInnerText('cart-count', count);
+
         } else {
             alert("This seat has already been purchased.");
         }
@@ -57,7 +58,7 @@ function getTotalPrice(id, value) {
 }
  
 
-
+    //discount part calculated
 const applyBtn = document.getElementById('apply-btn');
 applyBtn.addEventListener('click', function () {
 
@@ -73,7 +74,8 @@ applyBtn.addEventListener('click', function () {
         const grandTotal = document.getElementById('grand-total');    
         grandTotal.innerText = grandTotalPrice;
 
-        document.getElementById('input-field').value = '';
+        document.getElementById('input-field').style.display = 'none';
+        document.getElementById('apply-btn').style.display = 'none';
     }
     else if(discountElement === 'Couple 20'){
         const discountAmount = totalPrice * 0.2;
@@ -85,7 +87,8 @@ applyBtn.addEventListener('click', function () {
         const grandTotal = document.getElementById('grand-total');
         grandTotal.innerText = grandTotalPrice;
 
-        document.getElementById('input-field').value = '';
+        document.getElementById('input-field').style.display = 'none';
+        document.getElementById('apply-btn').style.display = 'none';
 
     }
     else {
