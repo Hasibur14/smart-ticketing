@@ -114,32 +114,27 @@ function setInnerText(id, value) {
 //button Modal
 const mobileInput = document.getElementById('mobileInput');
 const continueBtn = document.getElementById('continueBtn');
-const modalBtn = document.getElementById('modal-btn')
 
-continueBtn.addEventListener('click', function (event) {
+continueBtn.addEventListener('click', function(event) {
     event.preventDefault();
 
     if (mobileInput.value.trim() !== '') {
         const myModal = document.getElementById('myModal');
 
-
         if (myModal !== null && typeof myModal.showModal === 'function') {
             myModal.showModal();
-            setTimeout(function () {
+            setTimeout(function() {
                 window.location.reload();
-            }, 4000);
+            }, 9000);
             return;
         }
-    }
-    else {
+    } else {
         alert('Please enter your mobile number.');
-    };
-
-
-
-    if (modalBtn !== null && typeof modalBtn.showModal === 'function') {
-        myModal.showModal();
-        window.location.reload();
-        return;
     }
+});
+
+// Add event listener to the modal close button
+const modalCloseBtn = document.getElementById('modal-btn');
+modalCloseBtn.addEventListener('click', function() {
+    window.location.reload();
 });
