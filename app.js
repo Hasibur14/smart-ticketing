@@ -8,11 +8,12 @@ for (const seat of allSeat) {
         totalSeat = totalSeat - 1;
        
 
-        if(count.length === 4){
+        if(count <= 3){
             count = count + 1;
         }
         else{
             alert("You Parches maximum 4 seat");
+            return;
         };
 
         const seatNo = e.target.innerText;
