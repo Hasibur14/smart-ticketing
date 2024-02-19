@@ -19,7 +19,8 @@ for (const seat of allSeat) {
             }
 
             const seatNo = e.target.innerText;
-            const price = e.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].innerText;
+            const priceSub = e.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].innerText;
+            const price = parseInt(priceSub);
 
             const selectedSeatNo = document.getElementById('Selected-place-container');
             const li = document.createElement('li');
@@ -38,13 +39,15 @@ for (const seat of allSeat) {
 
             getTotalPrice("total-price", parseInt(price));
 
+            totalPrice += price;
+            
             setInnerText('seat-count', totalSeat);
             setInnerText('cart-count', count);
         } else {
             alert("This seat has already been purchased.");
         }
     });
-}
+};
 
 function getTotalPrice(id, value) {
     const totalPriceElement = document.getElementById(id);
@@ -52,32 +55,35 @@ function getTotalPrice(id, value) {
     const sum = totalPriceValue + value;
     setInnerText(id, sum);
 }
+ 
+
 
 const applyBtn = document.getElementById('apply-btn');
 applyBtn.addEventListener('click', function () {
-    const discountElement = document.getElementById('input-field').value;
 
-    if (count === 4) {
-        if (discountElement === 'NEW15') {
-            const discountAmount = totalPrice * 0.15;
-            setInnerText('discountPrice1', discountAmount.toFixed(2));
-            setInnerText('total', (totalPrice - discountAmount));
-            document.getElementById('input-field').value = '';
-        } else if (discountElement === 'Couple 20') {
-            const discountAmount = totalPrice * 0.2;
-            setInnerText('discountPrice', discountAmount.toFixed(2));
-            setInnerText('total', (totalPrice - discountAmount));
-            document.getElementById('input-field').value = '';
-        } else {
-            alert("Invalid coupon code");
-            document.getElementById('input-field').value = '';
-        }
-    } else {
-        alert("Please buy at least $200");
+    const discountElement = document.getElementById('input-field').value;
+   
+    if(discountElement === 'NEW15'){
+        const discountAmount = totalPrice * 0.15;
+        const discountElement = document.getElementById('discountPrice');
+        discountElement.innerText = discountAmount;
+
+        // grand total calculation
+        const grandTotalPrice = totalPrice - discountAmount;
+        const grandTotal = document.getElementById('grand-total');    
+        grandTotal.innerText = grandTotalPrice;
+
         document.getElementById('input-field').value = '';
     }
-});
+    else {
+        alert('Invalid Coupon Code');
+        document.getElementById('input-field').value = '';
+    }
 
+});  
+
+
+// inner text function
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
-}
+};

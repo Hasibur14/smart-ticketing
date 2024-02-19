@@ -487,7 +487,11 @@
                             <input id="input-field"
                                 class="w-[400px] h-14 text-lg font-semibold rounded-lg p-6 opacity-75 " type="text"
                                 placeholder="Have any copupon?">
-                            <button id="applyBtn" class="btn bg-[#1DD100] h-14">Apply</button>
+                            <button id="apply-btn" class="btn bg-[#1DD100] h-14">Apply</button>
+                        </div>
+                        <div class="flex justify-between">
+                            <p>Discount</p>
+                            <p>BDT <span id="discountPrice">0</span></p>
                         </div>
                         <div class="flex justify-between">
                             <p>Grand Total</p>
@@ -496,19 +500,25 @@
 
                     </div>
                     <div class="text-xl space-y-2 mt-4">
-                        <h4>Passenger Name :</h4>
-                        <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="text"
-                            placeholder="Enter your name">
-                        <h4>Phone Number :</h4>
-                        <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="text"
-                            placeholder="Enter your phone number">
-                        <h4>Email ID :</h4>
-                        <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="text"
-                            placeholder="Enter your email id">
+                        <form>
+                            <h4>Passenger Name :</h4>
+                            <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="text"
+                                placeholder="Enter your name">
+                            <h4>Phone Number :</h4>
+                            <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="number"
+                                placeholder="Enter your phone number" required>
+                            <h4>Email ID :</h4>
+                            <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="email"
+                                placeholder="Enter your email id">
 
-                        <!-- Open the modal using ID.showModal() method -->
-                        <button class="btn w-full text-xl text-white bg-[#1DD100]"
-                            onclick="my_modal_5.showModal()">Next</button>
+                            <!-- Open the modal using ID.showModal() method -->
+                            <!-- <button class="btn w-full text-xl text-white bg-[#1DD100]"
+                                onclick="my_modal_5.showModal()">Next</button> -->
+
+                            <input class="btn w-full text-xl text-white bg-[#1DD100]" type="submit" value="Next">
+                        </form>
+
+
                         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                             <div class="modal-box text-center items-center">
                                 <img class="lg:ml-44" src="./images/success.png" alt="">
@@ -535,12 +545,12 @@
 
 
     </main>
-    <footer class="footer p-10 bg-neutral text-neutral-content mt-20">
-        <div class="ml-36">
+    <footer class="footer flex lg:p-10 bg-neutral text-neutral-content mt-20">
+        <div class="ml-4 lg:ml-36">
             <aside>
-                <div class=" space-y-5 mb-8 ">
-                    <h2 class="text-3xl font-bold">CityHopper Paribahan</h2>
-                    <p class="text-lg">E-Ticket is a digital platform to make your daily commuting better.</p>
+                <div class="space-y-5 mb-8 ">
+                    <h2 class="text-xl lg:text-3xl font-bold">CityHopper Paribahan</h2>
+                    <p class="lg:text-lg">E-Ticket is a digital platform to make your daily commuting better.</p>
                 </div>
                 <br>
                 <hr>
@@ -550,7 +560,7 @@
         </div>
         </aside>
         </div>
-        <nav class="lg:ml-96">
+        <nav class="lg:ml-[600px]">
             <header class="footer-title">Get the App</header>
             <div class="grid grid-cols-1  gap-4 ">
                 <a><img class="w-36" src="./images/android.png" alt=""></a>
