@@ -40,7 +40,7 @@ for (const seat of allSeat) {
             getTotalPrice("total-price", parseInt(price));
 
             totalPrice += price;
-            
+
             setInnerText('seat-count', totalSeat);
             setInnerText('cart-count', count);
         } else {
@@ -68,12 +68,25 @@ applyBtn.addEventListener('click', function () {
         const discountElement = document.getElementById('discountPrice');
         discountElement.innerText = discountAmount;
 
-        // grand total calculation
+        // grand total calculation by NEW15
         const grandTotalPrice = totalPrice - discountAmount;
         const grandTotal = document.getElementById('grand-total');    
         grandTotal.innerText = grandTotalPrice;
 
         document.getElementById('input-field').value = '';
+    }
+    else if(discountElement === 'Couple 20'){
+        const discountAmount = totalPrice * 0.2;
+        const discountElement = document.getElementById('discountPrice');
+        discountElement.innerHTML = discountAmount;
+
+        // grand total calculation by Cauple 20
+        const grandTotalPrice = totalPrice -discountAmount;
+        const grandTotal = document.getElementById('grand-total');
+        grandTotal.innerText = grandTotalPrice;
+
+        document.getElementById('input-field').value = '';
+
     }
     else {
         alert('Invalid Coupon Code');
