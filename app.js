@@ -5,39 +5,44 @@ let totalPrice = 0;
 
 for (const seat of allSeat) {
     seat.addEventListener('click', function (e) {
-        totalSeat = totalSeat - 1;
-       
+        if (!seat.classList.contains('disabled')) { 
+            totalSeat = totalSeat - 1;
 
-        if(count <= 3){
-            count = count + 1;
+            if (count < 4) {
+                count = count + 1;
+                seat.style.backgroundColor = "#1DD100";
+                seat.style.cursor = "default"; 
+                seat.classList.add('disabled');
+            } else {
+                alert("You purchased maximum 4 seats");
+                return;
+            }
+
+            const seatNo = e.target.innerText;
+            const price = e.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].innerText;
+
+            const selectedSeatNo = document.getElementById('Selected-place-container');
+            const li = document.createElement('li');
+            const p1 = document.createElement('p');
+            p1.innerText = seatNo;
+            const p2 = document.createElement('p');
+            p2.innerText = 'Economic';
+            const p3 = document.createElement('p');
+            p3.innerText = '550';
+
+            li.appendChild(p1);
+            li.appendChild(p2);
+            li.appendChild(p3);
+
+            selectedSeatNo.appendChild(li);
+
+            getTotalPrice("total-price", parseInt(price));
+
+            setInnerText('seat-count', totalSeat);
+            setInnerText('cart-count', count);
+        } else {
+            alert("This seat has already been purchased.");
         }
-        else{
-            alert("You Parches maximum 4 seat");
-            return;
-        };
-
-        const seatNo = e.target.innerText;
-        const price = e.target.parentNode.parentNode.parentNode.parentNode.childNodes[1].innerText;
-
-        const selectedSeatNo = document.getElementById('Selected-place-container');
-        const li = document.createElement('li');
-        const p1 = document.createElement('p');
-        p1.innerText = seatNo;
-        const p2 = document.createElement('p');
-        p2.innerText = 'Economic';
-        const p3 = document.createElement('p');
-        p3.innerText = '550';
-
-        li.appendChild(p1);
-        li.appendChild(p2);
-        li.appendChild(p3);
-
-        selectedSeatNo.appendChild(li);
-
-        getTotalPrice("total-price", parseInt(price));
-
-        setInnerText('seat-count', totalSeat);
-        setInnerText('cart-count', count);
     });
 }
 
@@ -52,7 +57,7 @@ const applyBtn = document.getElementById('apply-btn');
 applyBtn.addEventListener('click', function () {
     const discountElement = document.getElementById('input-field').value;
 
-    if (count == 4) {
+    if (count === 4) {
         if (discountElement === 'NEW15') {
             const discountAmount = totalPrice * 0.15;
             setInnerText('discountPrice1', discountAmount.toFixed(2));
