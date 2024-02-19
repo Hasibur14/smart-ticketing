@@ -10,13 +10,13 @@ let totalPrice = 0;
 
 for (const seat of allSeat) {
     seat.addEventListener('click', function (e) {
-        if (!seat.classList.contains('disabled')) { 
+        if (!seat.classList.contains('disabled')) {
             totalSeat = totalSeat - 1;
 
             if (count < 4) {
                 count = count + 1;
                 seat.style.backgroundColor = "#1DD100";
-                seat.style.cursor = "default"; 
+                seat.style.cursor = "default";
                 seat.classList.add('disabled');
             } else {
                 alert("You purchased maximum 4 seats");
@@ -61,34 +61,34 @@ function getTotalPrice(id, value) {
     const sum = totalPriceValue + value;
     setInnerText(id, sum);
 }
- 
 
-    //discount part calculated
+
+//discount part calculated
 const applyBtn = document.getElementById('apply-btn');
 applyBtn.addEventListener('click', function () {
 
     const discountElement = document.getElementById('input-field').value;
-   
-    if(discountElement === 'NEW15'){
+
+    if (discountElement === 'NEW15') {
         const discountAmount = totalPrice * 0.15;
         const discountElement = document.getElementById('discountPrice');
         discountElement.innerText = discountAmount;
 
         // grand total calculation by NEW15
         const grandTotalPrice = totalPrice - discountAmount;
-        const grandTotal = document.getElementById('grand-total');    
+        const grandTotal = document.getElementById('grand-total');
         grandTotal.innerText = grandTotalPrice;
 
         document.getElementById('input-field').style.display = 'none';
         document.getElementById('apply-btn').style.display = 'none';
     }
-    else if(discountElement === 'Couple 20'){
+    else if (discountElement === 'Couple 20') {
         const discountAmount = totalPrice * 0.2;
         const discountElement = document.getElementById('discountPrice');
         discountElement.innerHTML = discountAmount;
 
         // grand total calculation by Cauple 20
-        const grandTotalPrice = totalPrice -discountAmount;
+        const grandTotalPrice = totalPrice - discountAmount;
         const grandTotal = document.getElementById('grand-total');
         grandTotal.innerText = grandTotalPrice;
 
@@ -101,7 +101,7 @@ applyBtn.addEventListener('click', function () {
         document.getElementById('input-field').value = '';
     }
 
-});  
+});
 
 
 // inner text function
@@ -114,17 +114,32 @@ function setInnerText(id, value) {
 //button Modal
 const mobileInput = document.getElementById('mobileInput');
 const continueBtn = document.getElementById('continueBtn');
+const modalBtn = document.getElementById('modal-btn')
 
-continueBtn.addEventListener('click', function(event) {
+continueBtn.addEventListener('click', function (event) {
     event.preventDefault();
 
     if (mobileInput.value.trim() !== '') {
         const myModal = document.getElementById('myModal');
+
+
         if (myModal !== null && typeof myModal.showModal === 'function') {
             myModal.showModal();
+            setTimeout(function () {
+                window.location.reload();
+            }, 4000);
+            return;
         }
     }
-     else {
+    else {
         alert('Please enter your mobile number.');
+    };
+
+
+
+    if (modalBtn !== null && typeof modalBtn.showModal === 'function') {
+        myModal.showModal();
+        window.location.reload();
+        return;
     }
 });

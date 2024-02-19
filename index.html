@@ -231,8 +231,9 @@
                     <hr>
 
                     <!-- seat -->
-                    <div class=" w-16 h-10 bg-gray-200 rounded-lg text-lg text-center items-center lg:ml-[70px] mt-4">
-                        <img class="p-1 ml-2" src="./images/steering.png" alt="">
+                    <div
+                        class=" w-16 h-10 bg-gray-200 rounded-lg text-lg text-center items-center ml-64 lg:ml-[740px] mt-4">
+                        <img class="p-1 ml-3" src="./images/steering.png" alt="">
                     </div>
 
                     <div> <span class="hidden">550</span>
@@ -485,8 +486,8 @@
                         </div>
                         <div id="cop-sec" class="flex">
                             <input id="input-field"
-                                class="w-[400px] h-14 text-lg font-semibold rounded-lg p-6 opacity-75 " type="text"
-                                placeholder="Have any copupon?">
+                                class="w-52 lg:w-[400px] h-14 text-lg font-semibold rounded-lg p-6 opacity-75 "
+                                type="text" placeholder="Have any copupon?">
                             <button id="apply-btn" class="btn bg-[#1DD100] h-14">Apply</button>
                         </div>
                         <div class="flex justify-between">
@@ -502,17 +503,17 @@
                     <div class="text-xl space-y-2 mt-4">
                         <form>
                             <h4>Passenger Name :</h4>
-                            <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="text"
+                            <input class="lg:w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="text"
                                 placeholder="Enter your name">
                             <h4>Phone Number :</h4>
-                            <input id="mobileInput" class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="number"
-                                placeholder="Enter your phone number">
+                            <input id="mobileInput" class="lg:w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="number"
+                                placeholder="Enter your phone number" required>
                             <h4>Email ID :</h4>
-                            <input class="w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="email"
+                            <input class="lg:w-[495px] h-14 bg-gray-50 rounded-lg p-4" type="email"
                                 placeholder="Enter your email id">
 
 
-                            <input id="continueBtn" class="btn lg:w-11/12 text-xl text-white mt-4 bg-[#1DD100]"
+                            <input id="continueBtn" class="btn w-64 lg:w-11/12 text-xl text-white mt-4 bg-[#1DD100]"
                                 type="submit" value="Next">
                         </form>
 
@@ -527,7 +528,8 @@
                                 <div class="modal-action">
                                     <form method="dialog">
 
-                                        <button class="btn bg-[#1DD100] text-lg text-white">Continue</button>
+                                        <button id="modal-btn"
+                                            class="btn bg-[#1DD100] text-lg text-white">Continue</button>
                                     </form>
                                 </div>
                             </div>
